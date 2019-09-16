@@ -1,10 +1,12 @@
+const quiz = document.querySelector(".quiz");
+
 // class to follow for each question
 class Question {
     constructor(questionAsked, answerChoices) {
     this.questionAsked = questionAsked;
     this.answerChoices = answerChoices;
     }
-}
+};
 // Array of questions and their answers
 // Each question should have an array of 4 possible answers with one having a true check boolean
 const questions = [
@@ -19,8 +21,15 @@ const questions = [
     new Question(`Where did Uncle Phil propose to Aunt Vivian?`, [{answer: `Soul Train`, check: true}, {answer: `Red Lobster`, check: false}, {answer: `In the car`, check: true}, {answer: `In a courthouse`, check: false}]),
     new Question(`What new career does Uncle Phil go into?`, [{answer: `Judge`, check: true}, {answer: `Priest`, check: false}, {answer: `Scientist`, check: true}, {answer: `Corrections Officer`, check: false}]),
 ];
-// function to render questions
 
+// function to render questions
+questions.forEach(function(question) {
+    let quizQuestion = document.createElement("p");
+    quizQuestion.innerText = question.questionAsked;
+    quiz.appendChild(quizQuestion);
+})
+
+// function to render answers
 
 console.log(questions);
 //append questions to quiz
