@@ -1,1 +1,1 @@
-# Fresh-Prince-Trive
+# Fresh-Prince-Trivia
