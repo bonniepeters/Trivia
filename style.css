@@ -1,9 +1,23 @@
 body {
     background-image: url("images/background.jpg");
+    margin: 1em 0;
+}
+
+h1 {
+    margin: 0 auto;
+    font-family: 'Sedgwick Ave Display';
+    font-size: 3.75em;
+    letter-spacing: -4px;
+    color: rgb(4, 170, 4);
+    text-shadow: 0 0 4px #000000, 0 0 30px hotpink;
+    padding: .25em .5em;
+    text-align: center;
 }
 
 .main {
     background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1em;
 }
 
 #end {
@@ -29,4 +43,26 @@ body {
 
 .game {
     display: none;
+}
+
+.instructions {
+    margin: 0 auto;
+    padding-bottom: .75em;
+}
+
+.start {
+    font-family: 'Sedgwick Ave', cursive;
+    font-size: 1.5em;
+    padding: 14px 18px;
+	background-color: rgb(105, 54, 173);
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	color: white;
+	cursor: pointer; 
+}
+.start-page {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
 }
