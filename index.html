@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Fresh Prince Trivia Game</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="main">
       <header>
         <h1>The Fresh Prince of Bel-Air Quiz</h1>
-        <p class="instructions">
-          Now this is a game all about how his life got flipped turned upside
-          down. And we'd like to take a minute just sit right there. It's time
-          to see how well you know the Prince of Bel-Air. <br /><br />
-          Answer 10 multiple-choice questions to see if you're a true
-          fan of the show.
-        </p>
-        <button class="start">Start Quiz!</button>
       </header>
+      <div class="start-page">
+        <p class="instructions"> Now this is a game all about how his life got flipped turned upside down. And we'd like to take a minute just sit right there. It's time to see how well you know the Prince of Bel-Air. <br /><br /> Answer 10 multiple-choice questions to see if you're a true fan of the show.</p>
+        <button class="start">Start Quiz!</button>
+      </div>
       <div class="game">
         <div class="stats">
           <h3 class="score">Score: 0/10</h3>
@@ -31,7 +31,7 @@
         <div id="end">
           <div id="end-textbox">
             <p class="results">Nice job!</p>
-            <a id="reset" href="#">Play again!</a>
+            <button id="reset">Play again!</button>
           </div>
         </div>
       </div>
