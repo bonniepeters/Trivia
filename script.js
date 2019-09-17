@@ -1,9 +1,10 @@
 const quiz = document.querySelector(".quiz");
-// const scoreBoard = document.querySelector(".score");
-// let score = 0;
-let currentQuestionIndex = 0;
 const next = document.querySelector("#next");
+let currentQuestionIndex = 0;
+let score = 0;
 let currentQuestion = '';
+
+next.addEventListener("click", nextQuestion);
 
 // class to follow for each question
 class Question {
@@ -29,7 +30,7 @@ const questions = [
     new Question(`When Will is kicked out of his apartment, where does he end up living?`, [`West Philadelphia`, `Down the street`, `Hollywood`, `The pool house`], `The pool house`)
 ];
 
-
+// Render/append a question incrementally as the user selects "load next question"
 function renderQuestion() {
     if (currentQuestionIndex < questions.length) {
         currentQuestion = questions[currentQuestionIndex];
@@ -38,20 +39,45 @@ function renderQuestion() {
         quiz.appendChild(renderedQuestion);
     }
     renderAnswers();
+    console.log(currentQuestion);
 };
 
+// Render/append answers to the current question
 function renderAnswers() {
     let eachChoice = questions[currentQuestionIndex].choices;
+    renderedQuestion = document.querySelector("li");
     for (let q = 0; q < 4; q++) {
         choice = document.createElement("button");
+        choice.className = "choices";
         choice.innerHTML = eachChoice[q];
-        quiz.appendChild(choice);
+        renderedQuestion.appendChild(choice);
+        choice.addEventListener("click", checkAnswer);
     }
 };
 
 function nextQuestion() {
+    clearCurrentQuestion();
     renderQuestion();
     currentQuestionIndex++;
+
 };
 
-next.addEventListener("click", nextQuestion);
+function clearCurrentQuestion() {
+    let child = quiz.firstElementChild;
+    while (child) {
+        quiz.removeChild(child);
+        child = quiz.firstElementChild;
+        }
+};
+
+function incrementScore() {
+    const scoreBoard = document.querySelector(".score");
+    score++;
+    scoreBoard.innerHTML = `Your current score: ${score}/10`
+};
+
+function checkAnswer(evt) {
+    if (evt.target.innerHTML == currentQuestion.answer) {
+        incrementScore();
+    }
+};
