@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Fresh Prince Trivia Game</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>The Fresh Prince of Bel-Air Trivia Game</h1>
-        <p>Now this is a game all about how his life got flipped turned upside down. And we'd like to take a minute just sit right there. It's time to see how well you know the Prince of Bel-Air. <br><br> Answer the following multiple-choice questions to see if you're a true fan of the show.</p>
-    </header>
-    <h3 class="score">Score: 0/10</h3>
-    <ul class="quiz">
-        <!-- questions to be added here -->
-    </ul>
-    <div id="modal">
-        <div id="modal-textbox">
-            <a id="reset" href="#">Try again!</a>
-            <p>Nice job!</p>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <h1>The Fresh Prince of Bel-Air Quiz</h1>
+        <p class="instructions">
+          Now this is a game all about how his life got flipped turned upside
+          down. And we'd like to take a minute just sit right there. It's time
+          to see how well you know the Prince of Bel-Air. <br /><br />
+          Answer 10 multiple-choice questions to see if you're a true
+          fan of the show.
+        </p>
+        <button class="start">Start Quiz!</button>
+      </header>
+      <div class="game">
+        <div class="stats">
+          <h3 class="score">Score: 0/10</h3>
+          <h3 class="question-number">Question 1</h3>
         </div>
+        <ul class="quiz">
+          <!-- questions will be added here -->
+        </ul>
+        <div id="end">
+          <div id="end-textbox">
+            <p class="results">Nice job!</p>
+            <a id="reset" href="#">Play again!</a>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
