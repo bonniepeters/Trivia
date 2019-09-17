@@ -1,10 +1,10 @@
 const quiz = document.querySelector(".quiz");
-const next = document.querySelector("#next");
+const modal = document.getElementById("modal");
+const reset = document.getElementById("reset");
+const scoreBoard = document.querySelector(".score");
 let currentQuestionIndex = 0;
 let score = 0;
 let currentQuestion = '';
-
-next.addEventListener("click", nextQuestion);
 
 // class to follow for each question
 class Question {
@@ -30,6 +30,8 @@ const questions = [
     new Question(`When Will is kicked out of his apartment, where does he end up living?`, [`West Philadelphia`, `Down the street`, `Hollywood`, `The pool house`], `The pool house`)
 ];
 
+nextQuestion();
+
 // Render/append a question incrementally as the user selects "load next question"
 function renderQuestion() {
     if (currentQuestionIndex < questions.length) {
@@ -37,9 +39,10 @@ function renderQuestion() {
         let renderedQuestion = document.createElement("li");
         renderedQuestion.innerHTML = currentQuestion.questionAsked;
         quiz.appendChild(renderedQuestion);
+        renderAnswers();
+    } else {
+        endGame();
     }
-    renderAnswers();
-    console.log(currentQuestion);
 };
 
 // Render/append answers to the current question
@@ -59,7 +62,6 @@ function nextQuestion() {
     clearCurrentQuestion();
     renderQuestion();
     currentQuestionIndex++;
-
 };
 
 function clearCurrentQuestion() {
@@ -71,13 +73,30 @@ function clearCurrentQuestion() {
 };
 
 function incrementScore() {
-    const scoreBoard = document.querySelector(".score");
     score++;
-    scoreBoard.innerHTML = `Your current score: ${score}/10`
+    scoreBoard.innerHTML = `Score: ${score}/10`;
 };
 
 function checkAnswer(evt) {
     if (evt.target.innerHTML == currentQuestion.answer) {
         incrementScore();
+        nextQuestion();
+    } else {
+        nextQuestion();
     }
 };
+
+function endGame() {
+    modal.style.display = 'block';
+};
+
+function resetGame() {
+    modal.style.display = 'none';
+    currentQuestionIndex = 0;
+    currentQuestion = '';
+    score = 0;
+    scoreBoard.innerHTML = `Score: ${score}/10`;
+    nextQuestion();
+};
+
+reset.addEventListener('click', resetGame);
