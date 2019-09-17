@@ -1,6 +1,6 @@
 body {
     background-image: url("images/background.jpg");
-    margin: 1em 0;
+    margin: 1.5em 0;
 }
 
 h1 {
@@ -9,7 +9,7 @@ h1 {
     font-size: 3.75em;
     letter-spacing: -4px;
     color: rgb(4, 170, 4);
-    text-shadow: 0 0 4px #000000, 0 0 30px hotpink;
+    text-shadow: 0 0 4px rgb(0, 0, 0), 0 0 30px rgb(204, 1, 170);
     padding: .25em .5em;
     text-align: center;
 }
@@ -22,23 +22,31 @@ h1 {
 
 #end {
     display: none;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0,0,0,0.7);
 	position: fixed;
 	top: 0;
-	left: 0;
+    left: 0;
+    right: 0;
 	height: 100%;
 	width: 100%;
 	z-index: 1;
-	overflow: auto;
+    overflow: auto;
+    font-size: 2em;
+    text-align: center;
 }
 
 #end-textbox {
+    padding-bottom: 1em;
 	background-color: white;
-	height: 350px;
-	width: 550px;
-	border-radius: 2px;
-	margin: 150px auto;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	width: 100%;
+	margin: 25% auto;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+#end-textbox > p {
+    padding: 1em;
+}
+.results {
+    margin: 0 auto;
 }
 
 .game {
@@ -50,7 +58,7 @@ h1 {
     padding-bottom: .75em;
 }
 
-.start {
+button {
     font-family: 'Sedgwick Ave', cursive;
     font-size: 1.5em;
     padding: 14px 18px;
@@ -65,4 +73,22 @@ h1 {
     display: flex;
     flex-direction: column;
     text-align: justify;
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: .75em;
+}
+.question {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.choices {
+    margin: .25em;
+}
+h2 {
+    margin: 0 auto;
+    font-size: 1.5em;
+    align-items: center;
 }
