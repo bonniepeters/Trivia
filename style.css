@@ -1,6 +1,6 @@
 body {
     background-image: url("images/background.jpg");
-    margin: 1.5em 0;
+    margin: 0;
 }
 
 h1 {
@@ -18,6 +18,13 @@ h1 {
     background-color: white;
     font-family: 'Montserrat', sans-serif;
     padding: 1em;
+    border-bottom: 3px solid yellow;
+}
+header {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1em;
+    border-top: 3px solid yellow;
 }
 
 #end {
@@ -91,4 +98,40 @@ h2 {
     margin: 0 auto;
     font-size: 1.5em;
     align-items: center;
+}
+
+@media screen and (min-width: 625px) {
+    body {
+        display: flex;
+    }
+    header {
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        top: 0;
+        left: 15px;
+        padding: 200px 0;
+        border-left: 3px solid yellow;
+        border-right: 3px solid yellow;
+        border-top: none;
+      }
+      .main {
+        margin: 150px 15px 0 337px;
+        height: 400px;
+        width: 100%;
+        display: flex;
+        border: 5px solid orange;
+    }
+    .start-page {
+        justify-content: center;
+        align-content: center;
+    }
+    .game {
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+    }
+    h2 {
+        margin: 0 0 18px 0;
+    }
 }
