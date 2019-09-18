@@ -32,7 +32,7 @@ const questions = [
     `images/geoffrey.png`
   ),
   new Question(
-    `What tune is the "Carlton Dance" to?`,
+    `What song does Carlton do the "Carlton Dance" to?`,
     [`It's Not Unusual`, `Jump On It`, `She's a Lady`, `Gettin' Jiggy Wit It`],
     `It's Not Unusual`,
     `images/carlton.png`
@@ -58,7 +58,7 @@ const questions = [
   new Question(
     `What music group inspired Nicky's name?`,
     [
-      `Rob Base and DJ E-Z Rock`,
+      `Dru Hill`,
       `Earth, Wind, and Fire`,
       `Boyz II Men`,
       `Bell Biv DeVoe`
@@ -114,8 +114,8 @@ function renderQuestion() {
     questionImage.setAttribute("src", `${currentQuestion.image}`);
     choices.className = "choices";
     quiz.appendChild(renderedQuestion);
-    renderedQuestion.appendChild(questionImage);
     renderedQuestion.appendChild(questionText);
+    renderedQuestion.appendChild(questionImage);
     renderedQuestion.appendChild(choices);
     renderAnswers();
   } else {
