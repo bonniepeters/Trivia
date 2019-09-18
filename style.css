@@ -42,7 +42,7 @@ header {
     padding-bottom: 1em;
 	background-color: white;
 	width: 100%;
-	margin: 25% auto;
+	margin: 15% auto;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 #end-textbox > p {
@@ -110,38 +110,41 @@ img {
 }
 
 
-@media screen and (min-width: 625px) {
-    body {
-        display: flex;
+@media screen and (min-width: 600px) {
+    .question {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        text-align: center;
+        align-items: center;
     }
-    header {
+    img {
+        justify-self: center;
         height: 100%;
-        width: 300px;
-        position: fixed;
-        top: 0;
-        left: 15px;
-        padding: 200px 0;
-        border-left: 3px solid yellow;
-        border-right: 3px solid yellow;
-        border-top: none;
-      }
-      .main {
-        margin: 150px 15px 0 337px;
-        height: 400px;
-        width: 100%;
-        display: flex;
-        border: 5px solid orange;
-    }
-    .start-page {
-        justify-content: center;
-        align-content: center;
-    }
-    .game {
-        justify-content: center;
-        align-content: center;
-        width: 100%;
+        /* height: 325px; */
+        grid-row: 1;
+        grid-column: 1/2;
     }
     h2 {
-        margin: 0 0 18px 0;
+        grid-column: 2/3;
+        text-align: left;
+        font-size: 3em;
+        width: 70%;
+        background-color: rgb(204, 1, 170);
+        box-shadow: 0 0 5px 10px rgb(204, 1, 170);
+        padding: 5%;
+        color: white;
+
+    }
+    .choices {
+        grid-column: 3/4;
+        grid-row: 1;
+    }
+    button.choice {
+        font-size: 1.75em;
+        padding: 15px 0;
+    }
+    .stats {
+        justify-content: space-evenly;
+        font-size: 1.25em;
     }
 }
