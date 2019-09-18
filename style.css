@@ -1,8 +1,7 @@
 body {
-    background-image: url("images/background.jpg");
+    background:linear-gradient(0deg,rgba(255, 255, 255, .6),rgba(255, 255, 255, .6)),url("images/background.jpg");
     margin: 0;
 }
-
 h1 {
     margin: 0 auto;
     font-family: 'Sedgwick Ave Display';
@@ -13,20 +12,18 @@ h1 {
     padding: .25em .5em;
     text-align: center;
 }
-
 .main {
-    background-color: white;
+    background-color: rgba(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
     padding: 1em;
     border-bottom: 3px solid yellow;
+    border-top: 3px solid yellow;
 }
 header {
-    background-color: white;
     font-family: 'Montserrat', sans-serif;
     padding: 1em;
     border-top: 3px solid yellow;
 }
-
 #end {
     display: none;
 	background-color: rgba(0,0,0,0.7);
@@ -41,7 +38,6 @@ header {
     font-size: 2em;
     text-align: center;
 }
-
 #end-textbox {
     padding-bottom: 1em;
 	background-color: white;
@@ -55,20 +51,17 @@ header {
 .results {
     margin: 0 auto;
 }
-
 .game {
     display: none;
 }
-
 .instructions {
     margin: 0 auto;
     padding-bottom: .75em;
 }
-
 button {
     font-family: 'Sedgwick Ave', cursive;
     font-size: 1.5em;
-    padding: 14px 18px;
+    padding: 10px;
 	background-color: rgb(105, 54, 173);
 	border: none;
 	outline: none;
@@ -84,21 +77,37 @@ button {
 .stats {
     display: flex;
     justify-content: space-between;
-    font-size: .75em;
+    font-size: 1em;
 }
 .question {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     text-align: center;
+    grid-gap: .25em;
 }
 .choices {
+    align-self: center;
+}
+.choice {
     margin: .25em;
+    width: 100%;
+}
+button.choice {
+    font-size: 1em;
 }
 h2 {
     margin: 0 auto;
     font-size: 1.5em;
-    align-items: center;
+    font-weight: bold;
 }
+h3 {
+    margin: .25em 0 0 0;
+}
+img {
+    grid-row:1/3;
+    height: 280px;
+}
+
 
 @media screen and (min-width: 625px) {
     body {
