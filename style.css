@@ -44,6 +44,10 @@ button {
 	color: white;
 	cursor: pointer; 
 }
+button:focus {
+    background-color: rgb(204, 1, 170);
+    border: 3px solid yellow;
+}
 .game {
     display: none;
 }
@@ -51,23 +55,25 @@ button {
     display: grid;
     grid-template-columns: 1fr 2fr;
     text-align: center;
-    grid-gap: .25em;
+    grid-row-gap: .25em;
+    grid-column-gap: 1em;
 }
 h2 {
-    margin: 0 auto;
+    margin: 10px auto;
     font-size: 1.5em;
     font-weight: bold;
     grid-column: 1/3;
 }
 .choices {
     align-self: center;
+    width: 100%;
 }
 img {
     height: 208px;
     grid-column:1/2;
 }
 .choice {
-    margin: .38em;
+    margin: .38em 0;
     width: 100%;
 }
 button.choice {
@@ -111,38 +117,16 @@ h3 {
 }
 
 @media screen and (min-width: 600px) {
-    .question {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        text-align: center;
-        align-items: center;
+    .main {
+        max-width: 45em;
+        margin: 0 auto;
     }
     img {
-        justify-self: center;
-        height: 100%;
-        grid-row: 1;
-        grid-column: 1/2;
-    }
-    h2 {
-        grid-column: 2/3;
-        text-align: left;
-        font-size: 3em;
-        width: 70%;
-        background-color: rgb(204, 1, 170);
-        box-shadow: 0 0 5px 10px rgb(204, 1, 170);
-        padding: 5%;
-        color: white;
-    }
-    .choices {
-        grid-column: 3/4;
-        grid-row: 1;
+        height: 20em;
+        margin: .8em 0 0 0;
     }
     button.choice {
         font-size: 1.75em;
         padding: 15px 0;
-    }
-    .stats {
-        justify-content: space-evenly;
-        font-size: 1.25em;
     }
 }
