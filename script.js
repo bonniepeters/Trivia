@@ -2,11 +2,13 @@ const game = document.querySelector(".game");
 const quiz = document.querySelector(".quiz");
 const start = document.querySelector(".start");
 const end = document.getElementById("end");
+const endText = document.getElementById("end-textbox");
 const reset = document.getElementById("reset");
 const scoreBoard = document.querySelector(".score");
 const questionNumber = document.querySelector(".question-number");
 const results = document.querySelector(".results");
 const instructions = document.querySelector(".instructions");
+const endGif = document.querySelector(".gif");
 let currentQuestionNumber = 0;
 let currentQuestionIndex = 0;
 let score = 0;
@@ -178,12 +180,13 @@ function resetGame() {
 
 function renderResults() {
   if (score < 5) {
-    results.innerHTML = `You got ${10 -
-      score} out of 10 wrong. Looks like you're up to no good.`;
+    results.innerHTML = `You got ${10-score} out of 10 wrong. Looks like you're up to no good.`;
   } else if (score < 8) {
     results.innerHTML = `You got ${score} out of 10 right. Not too bad, but you might end up sleeping in the pool house. Yo, homes smell ya later!`;
+    endGif.setAttribute("src", "GIFs/5-7.gif");
   } else {
     results.innerHTML = `You got ${score} out of 10 right. Look at you chillin' out maxin' relaxin' all cool!`;
+    endGif.setAttribute("src", "GIFs/8-10.gif");
   }
 }
 
