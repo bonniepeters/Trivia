@@ -18,8 +18,8 @@ A trivia game available on desktop or mobil browsers which allows fans of the TV
  * User has the ability to start over once they have finished
 * [Gold Level Feature Set](https://i.imgur.com/OuTtoh0.jpg)
  * Each question has its own correlating image
- * Number of questions is increased to 30 (Not currently developed)
- * Questions are asked in a random order (Not currently developed)
+ * Number of questions is increased to 30 (to be developed)
+ * Questions are asked in a random order (to be developed)
  * Based on the user's score, different gifs display in the results page
 
 ## Technologies Used
