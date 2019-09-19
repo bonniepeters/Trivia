@@ -18,7 +18,7 @@ class Question {
     this.questionAsked = questionAsked;
     this.choices = choices;
     this.answer = answer;
-    this.image = image
+    this.image = image;
   }
 }
 
@@ -57,12 +57,7 @@ const questions = [
   ),
   new Question(
     `What music group inspired Nicky's name?`,
-    [
-      `Dru Hill`,
-      `Earth, Wind, and Fire`,
-      `Boyz II Men`,
-      `Bell Biv DeVoe`
-    ],
+    [`Dru Hill`, `Earth, Wind, and Fire`, `Boyz II Men`, `Bell Biv DeVoe`],
     `Boyz II Men`,
     `images/nicky.png`
   ),
@@ -183,7 +178,8 @@ function resetGame() {
 
 function renderResults() {
   if (score < 5) {
-    results.innerHTML = `You got ${10-score} out of 10 wrong. Looks like you're up to no good.`;
+    results.innerHTML = `You got ${10 -
+      score} out of 10 wrong. Looks like you're up to no good.`;
   } else if (score < 8) {
     results.innerHTML = `You got ${score} out of 10 right. Not too bad, but you might end up sleeping in the pool house. Yo, homes smell ya later!`;
   } else {
