@@ -12,13 +12,13 @@ h1 {
     letter-spacing: -4px;
     color: rgb(4, 170, 4);
     text-shadow: 0 0 4px rgb(0, 0, 0), 0 0 30px rgb(204, 1, 170);
-    padding: .25em;
+    padding: .25em .25em 0 .25em;
     text-align: center;
 }
 .main {
     background-color: rgba(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
-    padding: 1em;
+    padding: .75em;
     border-bottom: 3px solid yellow;
     border-top: 3px solid yellow;
 }
