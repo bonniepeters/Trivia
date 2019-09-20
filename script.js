@@ -98,7 +98,7 @@ function startGame() {
   nextQuestion(); // run function to show first question
 }
 
-start.addEventListener("pointerdown", startGame); // start button click
+start.addEventListener("click", startGame); // start button click
 
 // Render/append a question incrementally as the user selects "load next question"
 function renderQuestion() {
@@ -131,7 +131,7 @@ function renderAnswers() {
     choice.className = "choice";
     choice.innerHTML = eachChoice[q];
     choices.appendChild(choice);
-    choice.addEventListener("pointerdown", checkAnswer);
+    choice.addEventListener("click", checkAnswer);
   }
 }
 
@@ -198,6 +198,6 @@ function renderResults() {
     results.innerHTML = `You got ${score} out of 10 right. Look at you chillin' out maxin' relaxin' all cool!`;
     endGif.setAttribute("src", "GIFs/8-10.gif");
   }
-  reset.addEventListener("pointerdown", resetGame);
+  reset.addEventListener("click", resetGame);
 }
 
