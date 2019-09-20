@@ -35,7 +35,7 @@ const questions = [
   ),
   new Question(
     `What song does Carlton do the "Carlton Dance" to?`,
-    [`It's Not Unusual`, `Jump On It`, `She's a Lady`, `Gettin' Jiggy Wit It`],
+    [`It's Not Unusual`, `Jump On It`, `She's a Lady`, `Get Down On It`],
     `It's Not Unusual`,
     `images/carlton.png`
   ),
@@ -91,9 +91,10 @@ const questions = [
 
 // initiate game
 function startGame() {
-  game.style.display = "block"; // show game css
-  instructions.style.display = "none"; // hide instructions
-  start.style.display = "none"; // hide start button
+  game.style.display = "block";
+  // hide irrelevant content
+  instructions.style.display = "none";
+  start.style.display = "none";
   nextQuestion(); // run function to show first question
 }
 
@@ -101,7 +102,7 @@ start.addEventListener("pointerdown", startGame); // start button click
 
 // Render/append a question incrementally as the user selects "load next question"
 function renderQuestion() {
-  if (currentQuestionIndex < questions.length) { // as long as index of questions array is larger than index
+  if (currentQuestionIndex < questions.length) {
     currentQuestion = questions[currentQuestionIndex];
     let renderedQuestion = document.createElement("div");
     let questionText = document.createElement("h2");
@@ -134,6 +135,7 @@ function renderAnswers() {
   }
 }
 
+// display next question
 function nextQuestion() {
   clearCurrentQuestion();
   renderQuestion();
@@ -142,6 +144,7 @@ function nextQuestion() {
   questionNumber.innerHTML = `Question ${currentQuestionNumber}`;
 }
 
+// remove current question content
 function clearCurrentQuestion() {
   let child = quiz.firstElementChild;
   while (child) {
@@ -150,11 +153,13 @@ function clearCurrentQuestion() {
   }
 }
 
+// keep score
 function incrementScore() {
   score++;
   scoreBoard.innerHTML = `Score: ${score}/10`;
 }
 
+// check if given answer was correct
 function checkAnswer(evt) {
   if (evt.target.innerHTML == currentQuestion.answer) {
     incrementScore();
@@ -164,11 +169,13 @@ function checkAnswer(evt) {
   }
 }
 
+// allow user to play again once they have reached the end
 function endGame() {
   end.style.display = "block";
   renderResults();
 }
 
+// reset to starting score, question number, and question content
 function resetGame() {
   end.style.display = "none";
   currentQuestionIndex = 0;
@@ -179,6 +186,7 @@ function resetGame() {
   nextQuestion();
 }
 
+// show the user how they did
 function renderResults() {
   if (score < 5) {
     results.innerHTML = `You got ${10-score} out of 10 wrong. Looks like you're up to no good.`;
@@ -190,6 +198,6 @@ function renderResults() {
     results.innerHTML = `You got ${score} out of 10 right. Look at you chillin' out maxin' relaxin' all cool!`;
     endGif.setAttribute("src", "GIFs/8-10.gif");
   }
+  reset.addEventListener("pointerdown", resetGame);
 }
 
-reset.addEventListener("pointerdown", resetGame);
