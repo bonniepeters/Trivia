@@ -3,8 +3,6 @@ body {
     margin: 0;
 }
 header {
-    font-family: 'Montserrat', sans-serif;
-    padding: 1em;
     border-top: 3px solid yellow;
 }
 h1 {
@@ -14,7 +12,7 @@ h1 {
     letter-spacing: -4px;
     color: rgb(4, 170, 4);
     text-shadow: 0 0 4px rgb(0, 0, 0), 0 0 30px rgb(204, 1, 170);
-    padding: .25em .5em;
+    padding: .25em;
     text-align: center;
 }
 .main {
@@ -32,6 +30,7 @@ h1 {
 .instructions {
     margin: 0 auto;
     padding-bottom: .75em;
+    font-size: 1.5em;
 }
 button {
     font-family: 'Sedgwick Ave', cursive;
@@ -44,7 +43,7 @@ button {
 	color: white;
 	cursor: pointer; 
 }
-button:focus {
+button:active {
     background-color: rgb(204, 1, 170);
     border: 3px solid yellow;
 }
