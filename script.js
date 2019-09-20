@@ -1,18 +1,18 @@
-const game = document.querySelector(".game");
-const quiz = document.querySelector(".quiz");
-const start = document.querySelector(".start");
-const end = document.getElementById("end");
-const endText = document.getElementById("end-textbox");
-const reset = document.getElementById("reset");
-const scoreBoard = document.querySelector(".score");
-const questionNumber = document.querySelector(".question-number");
-const results = document.querySelector(".results");
-const instructions = document.querySelector(".instructions");
-const endGif = document.querySelector(".gif");
-let currentQuestionNumber = 0;
-let currentQuestionIndex = 0;
-let score = 0;
-let currentQuestion = "";
+const game = document.querySelector(".game"); // entire game container // to change its display
+const quiz = document.querySelector(".quiz"); // quiz container // to append questions
+const start = document.querySelector(".start"); // start button // to initiate game
+const end = document.getElementById("end"); // end container // to change its display
+const endText = document.getElementById("end-textbox"); // end container // to display custom results
+const reset = document.getElementById("reset"); // reset button // to start over
+const scoreBoard = document.querySelector(".score"); // scoreboard // to show updated score
+const questionNumber = document.querySelector(".question-number"); // question number // to display current number
+const results = document.querySelector(".results"); // results paragraph // to display at end
+const instructions = document.querySelector(".instructions"); // instructions // to change its display
+const endGif = document.querySelector(".gif"); // gif // to adjust according to score
+let currentQuestionNumber = 0; // number to be displayed
+let currentQuestionIndex = 0; // index for selecting question
+let score = 0; // score to be displayed
+let currentQuestion = ""; // current question to be displayed
 
 // class to follow for each question
 class Question {
@@ -89,18 +89,19 @@ const questions = [
   )
 ];
 
+// initiate game
 function startGame() {
-  game.style.display = "block";
-  instructions.style.display = "none";
-  start.style.display = "none";
-  nextQuestion();
+  game.style.display = "block"; // show game css
+  instructions.style.display = "none"; // hide instructions
+  start.style.display = "none"; // hide start button
+  nextQuestion(); // run function to show first question
 }
 
-start.addEventListener("click", startGame);
+start.addEventListener("pointerdown", startGame); // start button click
 
 // Render/append a question incrementally as the user selects "load next question"
 function renderQuestion() {
-  if (currentQuestionIndex < questions.length) {
+  if (currentQuestionIndex < questions.length) { // as long as index of questions array is larger than index
     currentQuestion = questions[currentQuestionIndex];
     let renderedQuestion = document.createElement("div");
     let questionText = document.createElement("h2");
@@ -129,7 +130,7 @@ function renderAnswers() {
     choice.className = "choice";
     choice.innerHTML = eachChoice[q];
     choices.appendChild(choice);
-    choice.addEventListener("click", checkAnswer);
+    choice.addEventListener("pointerdown", checkAnswer);
   }
 }
 
@@ -181,6 +182,7 @@ function resetGame() {
 function renderResults() {
   if (score < 5) {
     results.innerHTML = `You got ${10-score} out of 10 wrong. Looks like you're up to no good.`;
+    endGif.setAttribute("src", "GIFs/1-4.gif");
   } else if (score < 8) {
     results.innerHTML = `You got ${score} out of 10 right. Not too bad, but you might end up sleeping in the pool house. Yo, homes smell ya later!`;
     endGif.setAttribute("src", "GIFs/5-7.gif");
@@ -190,4 +192,4 @@ function renderResults() {
   }
 }
 
-reset.addEventListener("click", resetGame);
+reset.addEventListener("pointerdown", resetGame);
