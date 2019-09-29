@@ -104,6 +104,8 @@ start.addEventListener("click", startGame); // start button click
 function renderQuestion() {
   if (currentQuestionIndex < questions.length) {
     currentQuestion = questions[currentQuestionIndex];
+    // I would create functions for creating each of these elements and then call those functions
+    // like createQuestion() createImage() createChoices() potentially in order to break down this function more
     let renderedQuestion = document.createElement("div");
     let questionText = document.createElement("h2");
     let questionImage = document.createElement("IMG");

@@ -51,6 +51,7 @@ button:active {
     display: none;
 }
 .question {
+    /* Nice job using grid! */
     display: grid;
     grid-template-columns: 1fr 2fr;
     text-align: center;
@@ -101,6 +102,7 @@ h3 {
     font-size: 2em;
     text-align: center;
 }
+/* I would only use classes for CSS! */
 #end-textbox {
     display: grid;
     grid-template-columns: 1fr;
